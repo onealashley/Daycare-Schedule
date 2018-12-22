@@ -1,0 +1,42 @@
+.timeanddate {
+    margin: 7%;
+    font-size: 3em;
+}
+
+.weather {
+    margin-right: 10%;
+    font-size: 3em;
+}
+
+button {
+    margin-left: 9%;
+    font-size: 1em;
+}
+
+.header {
+    margin-top: 2%;
+}
+
+.btn2 {
+    margin-left: 2%;
+}
+
+table {
+    width: 40%;
+}
+
+#table2 {
+    float: right;
+    margin-top: -21px;
+    margin-right: 56px;
+}
+
+.over {
+    margin: 53%;
+    font-size: 3em;
+}
+
+.under {
+    margin-left: 13%;
+    font-size: 3em;
+}
