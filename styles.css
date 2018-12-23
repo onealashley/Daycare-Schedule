@@ -14,7 +14,8 @@ button {
 }
 
 .header {
-    margin-top: 2%;
+    background-color: bisque;
+    padding: 40px;
 }
 
 .btn2 {
@@ -27,16 +28,28 @@ table {
 
 #table2 {
     float: right;
-    margin-top: -21px;
+    margin-top: -64px;
     margin-right: 56px;
 }
 
 .over {
-    margin: 53%;
+    margin: 44%;
     font-size: 3em;
 }
 
 .under {
-    margin-left: 13%;
+    margin-left: 14%;
     font-size: 3em;
+}
+
+td {
+    text-align: center;
+}
+
+.red {
+    color: red;
+}
+
+.blue {
+    color: blue;
 }
