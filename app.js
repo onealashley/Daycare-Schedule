@@ -8,7 +8,7 @@ var update = function () {
 
 var weatherUpdate = function() {
     var APIKey = "GP3P0deAjGZK4NUi1B9Ba4TrlI5Xo96J"
-    var queryUrl = "http://dataservice.accuweather.com/currentconditions/v1/331252?apikey=" + APIKey;
+    var queryUrl = "https://dataservice.accuweather.com/currentconditions/v1/331252?apikey=" + APIKey;
 
     $.ajax({
         url: queryUrl,
