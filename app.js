@@ -67,13 +67,13 @@ var room2 = [
 function tableLoop2(){
     for (i = 0; i < room2.length; i++) {
         if (room2[i].shift == "A"){
-            $("#table2").append("<tr style=color:red><td>" + room2[i].date + "</td><td>" + room2[i].name + "</td><td>" + room2[i].shift + "</td><td>" + room2[i].time + "</td></tr>")
+            $("#table2").append("<tr style=background-color:red><td>" + room2[i].date + "</td><td>" + room2[i].name + "</td><td>" + room2[i].shift + "</td><td>" + room2[i].time + "</td></tr>")
         } else if (room2[i].shift == "B"){
-            $("#table2").append("<tr style=color:blue><td>" + room2[i].date + "</td><td>" + room2[i].name + "</td><td>" + room2[i].shift + "</td><td>" + room2[i].time + "</td></tr>")
+            $("#table2").append("<tr style=background-color:blue><td>" + room2[i].date + "</td><td>" + room2[i].name + "</td><td>" + room2[i].shift + "</td><td>" + room2[i].time + "</td></tr>")
         } else if (room2[i].shift == "C"){
-            $("#table2").append("<tr style=color:yellow><td>" + room2[i].date + "</td><td>" + room2[i].name + "</td><td>" + room2[i].shift + "</td><td>" + room2[i].time + "</td></tr>")
+            $("#table2").append("<tr style=background-color:yellow><td>" + room2[i].date + "</td><td>" + room2[i].name + "</td><td>" + room2[i].shift + "</td><td>" + room2[i].time + "</td></tr>")
         } else if (room2[i].shift == "D"){
-            $("#table2").append("<tr style=color:green><td>" + room2[i].date + "</td><td>" + room2[i].name + "</td><td>" + room2[i].shift + "</td><td>" + room2[i].time + "</td></tr>")
+            $("#table2").append("<tr style=background-color:green><td>" + room2[i].date + "</td><td>" + room2[i].name + "</td><td>" + room2[i].shift + "</td><td>" + room2[i].time + "</td></tr>")
         }
         
         
@@ -83,9 +83,9 @@ function tableLoop2(){
 function tableLoop(){
     for (i = 0; i < room1.length; i++) {
         if (room1[i].shift == "A"){
-            $("#table1").append("<tr style=color:red><td>" + room1[i].date + "</td><td>" + room1[i].name + "</td><td>" + room1[i].shift + "</td><td>" + room1[i].time + "</td></tr>")
+            $("#table1").append("<tr style=background-color:red><td>" + room1[i].date + "</td><td>" + room1[i].name + "</td><td>" + room1[i].shift + "</td><td>" + room1[i].time + "</td></tr>")
         } else if (room1[i].shift == "B"){
-            $("#table1").append("<tr style=color:blue><td>" + room1[i].date + "</td><td>" + room1[i].name + "</td><td>" + room1[i].shift + "</td><td>" + room1[i].time + "</td></tr>")
+            $("#table1").append("<tr style=background-color:blue><td>" + room1[i].date + "</td><td>" + room1[i].name + "</td><td>" + room1[i].shift + "</td><td>" + room1[i].time + "</td></tr>")
         }
         
     }
@@ -99,5 +99,4 @@ $(document).ready(function(){
     tableLoop();
     tableLoop2();
     setInterval(update, 1000);
-    setInterval(weatherUpdate, 600000);
 });
