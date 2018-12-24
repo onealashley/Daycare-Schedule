@@ -1,150 +1,157 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Daycare Schedule</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Daycare Schedule</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <div class=header>
-        <span class="timeanddate"></span>
-        <span class="weather"></span>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modal1">
-            Room 1 Schedule
-        </button>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modal2">
-            Room 2 Schedule
-        </button>
-        
+  <div class=header>
+    <span class="timeanddate"></span>
+    <span class="weather"></span>
+    <img src="images/plus.png" id="img" alt="">
+    <div class="btn">
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modal1">
+        Room 1 Schedule
+      </button>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modal2">
+        Room 2 Schedule
+      </button>
     </div>
-    <div>
 
-      <div class="title">Room 1</div>
-      <table id='table1' class="table">
-          <thead>
-            
-            <col width="150">
-            <col width="150">
-            <col width="150">
-            <col width="150">
-            <tr>
-              <th>Date</th>
-              <th>Name</th>
-              <th>Shift</th>
-              <th>Schedule</th>   
-            </tr>
-          </thead>
-          <tbody>
+  </div>
+  <div>
 
-          </tbody>
-        </table>
-        <div class="title">Room 2</div>
-      <table id='table2' class="table">
-          <thead>
-            <col width="150">
-            <col width="150">
-            <col width="150">
-            <col width="150">
-            <tr>
-              <th>Date</th>
-              <th>Name</th>
-              <th>Shift</th>
-              <th>Schedule</th>  
-            </tr>
-          </thead>
-          <tbody>
+    <div class="title">Room 1</div>
+    <table id='table1' class="table">
+      <thead>
 
-          </tbody>
-        </table>
+        <col width="150">
+        <col width="150">
+        <col width="150">
+        <col width="150">
+        <tr>
+          <th>Date</th>
+          <th>Name</th>
+          <th>Shift</th>
+          <th>Schedule</th>
+        </tr>
+      </thead>
+      <tbody>
+
+      </tbody>
+    </table>
+    <div class="title">Room 2</div>
+    <table id='table2' class="table">
+      <thead>
+        <col width="150">
+        <col width="150">
+        <col width="150">
+        <col width="150">
+        <tr>
+          <th>Date</th>
+          <th>Name</th>
+          <th>Shift</th>
+          <th>Schedule</th>
+        </tr>
+      </thead>
+      <tbody>
+
+      </tbody>
+    </table>
+  </div>
+
+  <div class="modal fade" id="Modal1" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="form1">
+            <div class="form-group">
+              <label for="date">Date</label>
+              <input type="text" class="form-control" id="date">
+            </div>
+            <div class="form-group">
+              <label for="name">name</label>
+              <input type="text" class="form-control" id="name">
+            </div>
+            <div class="form-group">
+              <label for="shift">Shift</label>
+              <input type="text" class="form-control" id="shift">
+            </div>
+            <div class="form-group">
+              <label for="time">time</label>
+              <input type="text" class="form-control" id="time">
+            </div>
+
+          </form>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary" id="submit" data-dismiss="modal">Submit</button>
+        </div>
       </div>
-      <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modal1">
-          Room 1 Schedule
-        </button> -->
+    </div>
+  </div>
 
-        <div class="modal fade" id="Modal1" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                    <form id="form1">
-                        <div class="form-group">
-                          <label for="date">Date</label>
-                          <input type="text" class="form-control" id="date">
-                        </div>
-                        <div class="form-group">
-                          <label for="name">name</label>
-                          <input type="text" class="form-control" id="name">
-                        </div>
-                        <div class="form-group">
-                          <label for="shift">Shift</label>
-                          <input type="text" class="form-control" id="shift">
-                        </div>
-                        <div class="form-group">
-                          <label for="time">time</label>
-                          <input type="text" class="form-control" id="time">
-                        </div>
-                        
-                      </form>
+  <div class="modal fade" id="Modal2" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Room 2 Schedule</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="date">Date</label>
+              <input type="text" class="form-control" id="date2">
+            </div>
+            <div class="form-group">
+              <label for="name">name</label>
+              <input type="text" class="form-control" id="name2">
+            </div>
+            <div class="form-group">
+              <label for="shift">Shift</label>
+              <input type="text" class="form-control" id="shift2">
+            </div>
+            <div class="form-group">
+              <label for="time">time</label>
+              <input type="text" class="form-control" id="time2">
+            </div>
 
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="submit" class="btn btn-primary" id="submit" data-dismiss="modal">Submit</button>
-                </div>
-              </div>
-            </div>
-          </div>
-    
-          <div class="modal fade" id="Modal2" tabindex="-1" role="dialog" aria-hidden="true">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Room 2 Schedule</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                      <form>
-                          <div class="form-group">
-                            <label for="date">Date</label>
-                            <input type="text" class="form-control" id="date2">
-                          </div>
-                          <div class="form-group">
-                            <label for="name">name</label>
-                            <input type="text" class="form-control" id="name2">
-                          </div>
-                          <div class="form-group">
-                            <label for="shift">Shift</label>
-                            <input type="text" class="form-control" id="shift2">
-                          </div>
-                          <div class="form-group">
-                            <label for="time">time</label>
-                            <input type="text" class="form-control" id="time2">
-                          </div>
-                          
-                        </form>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary" id="submit2" data-dismiss="modal">Submit</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
-      <script src="app.js"></script>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary" id="submit2" data-dismiss="modal">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+  <script src="app.js"></script>
 </body>
+
 </html>
