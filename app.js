@@ -61,12 +61,6 @@ $("#submit").on("click", function () {
     $("#shift").val("");
     $("#time").val("");
 
-    $("#date2").val("");
-    $("#name2").val("");
-    $("#shift2").val("");
-    $("#time2").val("");
-
-
     return false;
 });
 
@@ -84,6 +78,11 @@ $("#submit2").on("click", function () {
     };
 
     room1Data.ref().push(newSchedule);
+
+    $("#date2").val("");
+    $("#name2").val("");
+    $("#shift2").val("");
+    $("#time2").val("");
 
     return false;
 });
